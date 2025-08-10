@@ -31,7 +31,7 @@ const Index = () => {
                 <Menu className="h-6 w-6" />
               </Link>
             </Button>
-            <h1 className="absolute inset-0 flex items-center justify-center pointer-events-none font-brandKannada text-3xl">ನೀನುದಿ</h1>
+            <h1 className="absolute inset-0 flex items-center justify-center pointer-events-none font-brandKannada text-3xl">ನೀನುಡಿ</h1>
             <Button
               variant="ghost"
               size="icon"
