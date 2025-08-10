@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const More = () => {
   const [open, setOpen] = useState(true);
-  const [offline, setOffline] = useState(true);
+  const [offline, setOffline] = useState(false);
 
   return (
     <main className="min-h-screen bg-background flex flex-col md:flex-row">
