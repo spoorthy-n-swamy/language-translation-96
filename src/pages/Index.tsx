@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ArrowLeftRight, Mic, Image, Camera, Menu, Sun, Moon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTheme } from "next-themes";
+import { useState } from "react";
 
 const languages = [
   { code: "kn", label: "Kannada" },
@@ -15,6 +16,14 @@ const languages = [
 
 const Index = () => {
   const { theme, setTheme } = useTheme();
+  const [fromLanguage, setFromLanguage] = useState(languages[0].code);
+  const [toLanguage, setToLanguage] = useState(languages[1].code);
+
+  const swapLanguages = () => {
+    const temp = fromLanguage;
+    setFromLanguage(toLanguage);
+    setToLanguage(temp);
+  };
   return (
     
       <main className="min-h-screen bg-background">
@@ -46,7 +55,7 @@ const Index = () => {
 
         <section className="px-4 sm:px-6 grid gap-6 animate-enter max-w-md mx-auto w-full">
           <div className="flex items-center gap-2">
-            <Select defaultValue={languages[0].code}>
+            <Select value={fromLanguage} onValueChange={setFromLanguage}>
               <SelectTrigger className="flex-1 min-w-0 h-12 text-base">
                 <SelectValue placeholder="From" />
               </SelectTrigger>
@@ -60,11 +69,11 @@ const Index = () => {
               </SelectContent>
             </Select>
 
-            <Button variant="pill" size="icon" className="flex-shrink-0 h-12 w-12" aria-label="Swap languages">
+            <Button variant="pill" size="icon" className="flex-shrink-0 h-12 w-12" aria-label="Swap languages" onClick={swapLanguages}>
               <ArrowLeftRight className="h-5 w-5" />
             </Button>
 
-            <Select defaultValue={languages[1].code}>
+            <Select value={toLanguage} onValueChange={setToLanguage}>
               <SelectTrigger className="flex-1 min-w-0 h-12 text-base">
                 <SelectValue placeholder="To" />
               </SelectTrigger>
