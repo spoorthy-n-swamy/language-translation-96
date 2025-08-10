@@ -11,14 +11,14 @@ const More = () => {
   const [offline, setOffline] = useState(true);
 
   return (
-    <main className="min-h-screen bg-background flex">
+    <main className="min-h-screen bg-background flex flex-col md:flex-row">
       <Helmet>
         <title>More | Translator</title>
         <meta name="description" content="Profile, offline translation, settings" />
         <link rel="canonical" href="/more" />
       </Helmet>
 
-      <div className="w-1/2 h-screen bg-sidebar-background border-r border-sidebar-border p-6 overflow-y-auto">
+      <div className="w-full md:w-1/2 h-screen bg-sidebar-background md:border-r border-sidebar-border p-6 overflow-y-auto">
         <div className="space-y-8">
           <div className="flex items-center justify-between">
             <div>
@@ -68,7 +68,7 @@ const More = () => {
         </div>
       </div>
 
-      <div className="w-1/2 h-screen bg-background"></div>
+      <div className="hidden md:block w-1/2 h-screen bg-background"></div>
     </main>
   );
 };
