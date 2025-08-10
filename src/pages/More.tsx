@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Settings, Download } from "lucide-react";
+import { Settings, Download, ArrowLeft } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const More = () => {
   const [open, setOpen] = useState(true);
@@ -19,9 +20,16 @@ const More = () => {
 
       <div className="w-1/2 h-screen bg-sidebar-background border-r border-sidebar-border p-6 overflow-y-auto">
         <div className="space-y-8">
-          <div>
-            <h1 className="text-2xl font-bold text-sidebar-foreground mb-2">More</h1>
-            <p className="text-sidebar-foreground/70">Profile and preferences</p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-bold text-sidebar-foreground mb-2">More</h1>
+              <p className="text-sidebar-foreground/70">Profile and preferences</p>
+            </div>
+            <Button variant="ghost" size="icon" className="h-10 w-10" asChild>
+              <Link to="/">
+                <ArrowLeft className="h-5 w-5" />
+              </Link>
+            </Button>
           </div>
 
           <div className="flex items-center gap-4">
